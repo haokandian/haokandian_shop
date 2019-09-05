@@ -1,0 +1,118 @@
+一 ，幻灯
+  1、说明
+     首页幻灯接口
+    
+  2、访问地址： http://www.yii.com/pic/list.html
+
+  3、请求方式： get 
+
+  4、输出格式：json
+
+  5、返回值： 
+     { 
+       "code":1,  // 正确返回 0：  错误返回值小于0 
+       "message":"",  //错误时的报错信息 。
+       "data":[       // 正确时具体值  
+               {
+                "id":"1",   //唯一说明
+                "title":"111",  //幻灯标题 
+                "url":"http:\/\/www.baidu.com", //幻灯网址
+                "pic":"http://wwww.aaa.com/a.jpg"  //幻灯图片地址 。
+               },{
+               .....
+               },
+               .....
+          ]
+        }
+
+二,推荐接口 
+   1,说明
+     分类接口
+   2.访问地址：http://www.yii.com/ns-goods/list.html
+   3.输出格式：json
+   4.返回值：
+{
+     "code":0,// 正确返回 0：  错误返回值小于0 
+     "message":"", //错误时的报错信息 。
+     "data":[		// 正确时具体值 
+             {
+              "goods_id":"1",  //商品ID唯一
+              "goods_name":"\u8349\u5e3d", //商品名称
+              "shop_id":null,		//店铺Id
+              "is_recommend":"1",    //是否推荐
+              "goods_pic":null,      //商品图片
+              "goods_spec":"",       //商品规格
+              "sort":"1",	     //排序
+              "original_price":null, //原价
+              "present_price":null,  //现价
+              "update_time":null,    //修改时间
+              "create_time":null,    //添加的时间
+              "category":"7",       //分类ID
+              "number":null,        //数量
+              "description":null    //详情
+
+   }
+]
+ 三,分类页接口
+   1.说明
+     分类接口
+   2，访问地址：http://www.yii.com/npi/list.html
+   3，输出格式：json
+   4, 返回值：
+{
+      "code":0,                 // 正确返回 0：  错误返回值小于0 
+      "message":"",              //错误时的报错信息 
+      "data":{			// 正确时具体值 
+              "stair":[         //分类
+                  {
+                    "id":"1",     //分类ID
+                    "category_name":"\u8863\u670d",   //分类名称
+                    "pid":"0",                        //父级ID
+                    "level":"1",                      //级别
+                    "category_pic":"www",             //分类图片
+                     "sort":"1"                       // 排序
+                   },{},{}.....],
+	       "second":[         //分类及分类下的商品
+                  {
+                     "id":"4",                       //商品唯一ID    
+                    "category_name":"\u5927\u8863",  //分类名称
+                    "pid":"1",                        //父级ID
+                    "level":"2",                      //级别
+                    "category_pic":"\u55e1\u55e1\u55e1", // 商品图片
+                    "sort":"2",				  // 排序
+                    "goods_list":[
+  			          {
+                                        "goods_id":"1",
+                                        "goods_name":"\u8349\u5e3d",
+                                        "shop_id":null,
+                                        "is_recommend":"1",
+                          		"goods_pic":null,
+                                        "goods_spec":"",
+                                        "sort":"1",
+                                        "original_price":null,
+                                        "present_price":null,
+                                        "update_time":null,
+                                        "create_time":null,
+                                        "category":"7",
+                                        "number":null,
+                                       "description":null
+          			},
+
+                                ]
+                   },
+					//同上面  //分类及分类下的商品
+		  {
+                    "id":"7",				//分类
+                    "category_name":"\u6bdb\u8863",
+                    "pid":"1",
+                    "level":"2",
+                    "category_pic":"\u6492\u65e6",
+                    "sort":"7",
+                    "goods_list":[]   //商品
+
+                  }
+]}}
+
+}
+四, //购物车接口
+	//需要前台给参数（个人的传过来的ID）
