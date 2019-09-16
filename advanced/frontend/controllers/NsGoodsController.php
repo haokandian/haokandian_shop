@@ -11,15 +11,13 @@ namespace frontend\controllers;
 use frontend\models\NsGoods;
 use yii\web\Controller;
 
-class NsGoodsController extends Controller
+class NsGoodsController extends ApiController
 {
+    public $modelClass='frontend\models\NsCategory';   
     public function actionList(){
         $list = NsGoods::find()->where(['is_recommend'=>1])->asArray()->all();
-        $data =array(
-            "code"=>0,
-            "message"=>"",
-            "data"=>$list
-        );
-        exit(json_encode($data));
+      
+        return $list;
+        
     }
 }
