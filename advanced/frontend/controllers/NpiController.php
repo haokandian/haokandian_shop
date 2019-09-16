@@ -12,7 +12,7 @@ use frontend\models\NsGoods;
 use frontend\models\NsCategory;
 use yii\web\Controller;
 
-class NpiController extends Controller
+class NpiController extends ApiController
 {
     public function actionList(){
         $list = NsCategory::find()->where(['pid'=>0])->asArray()->all();
@@ -32,6 +32,6 @@ class NpiController extends Controller
             "message"=>"",
             "data"=>$data
         );
-        exit(json_encode($data));
+       echo json_encode($data);
     }
 }
